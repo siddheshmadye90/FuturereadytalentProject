@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <title>APPACHE WEBSERVER COMMANDS</title>
+</head>
+
+<body>
+
+    <div class="wrapper">
+    <div class="header" >
+        <div class="logo" id="myLogo">
+            <img src="{{url_for('static',filename='logo.png')}}" alt="logo" style="width: 140px; margin-top: 50px; margin-left: 80px;">
+        </div>
+        <div class="welcome-text" id="myTitle">
+            <h1 id="myTitle">LINUX EMULATOR</h1>
+            <p id="myTitle">YOUR ON THE LINUX BUDDY</p>
+        </div>
+    </div>
+
+    <div id="myNav">
+    <ul class="nav-area" >
+        <li><a href="{{url_for('home')}}">Comand Information</a></li>
+        <li><a href="{{url_for('terminal')}}">Terminal</a></li>
+        <li><a href="{{url_for('bot')}}">FAQ chatbox</a></li>
+        <li><a href="{{url_for('download')}}">offline version download</a></li>
+        <li><a href="{{url_for('about')}}">About</a></li>
+
+    </ul>
+    </div>
+
+    <div class="info">
+
+        <P>*INFORMATION ABOUT APPACHE WEBSERVER*
+            <br>
+            <br>
+
+            A web server is computer software and underlying hardware that accepts requests via HTTP, the network
+            protocol created to distribute web pages, or its secure variant HTTPS
+            After configuration you can go on http://localhost:80 you can see the default web to change default web page
+            with your own page you can do this by replacing the file present in /var/www/html with your html file also
+            you can change the default port number by modifing apache config file you will find following lind binding
+            Apache to port 80 change listen on 80 to listen on any port you want
+
+        </P>
+        <br>
+
+        <h1>APPACHE WEBSERVER COMMANDS</h1>
+        <br>
+        <ul style="padding: 20px; margin-bottom: 30px;">
+
+            <li><B>yum install -y httpd </B>
+                <p> This command is to install apache webserver</p>
+            </li>
+            <hr>
+            <li><B>yum install -y httpd </B>
+                <p> This command is to install apache webserver</p>
+            </li>
+            <hr>
+            <li><B>systemctl stop httpd </B>
+                <p>To stop the service </p>
+            </li>
+            <hr>
+        </ul>
+    </div>
+    </div>
+
+
+    <nav class="sidebar" id="sidebar">
+        <!-- <div class="text">Basic Linux commands</div> -->
+        <ul>
+            <li><a href="{{url_for('home')}}">Basic Linux Commands</a></li>
+
+            <li><a href="https://www.thegeekdiary.com/redhat-centos-a-beginners-guide-to-lvm-logical-volume-manager/#:~:text=A%20Logical%20Volume%20is%20the%20conceptual%20equivalent%20of,a%20logical%20volume%20in%20an%20existing%20volume%20group.">LVM commands <br> (Logical Group Volume)</a> </li>
+            <li><a href="{{url_for('dockercmmd')}}">Docker commands</a></li>
+            <li><a href="{{url_for('appachecmmd')}}">Appache Webserver Commands</a></li>
+            <li><a href="https://docs.aws.amazon.com/cli/index.html">AWS Basic Commands</a></li>
+        </ul>
+
+    </nav>
+</div>
+    <script>
+        window.onscroll=function(){myfunction()};
+
+        var logo=document.getElementById("myLogo");
+        var title=document.getElementById("myTitle");
+        var nav=document.getElementById("myNav");
+        var sidebar=document.getElementById("sidebar");
+
+        var sticky=header.offsetTop;
+
+        function myfunction(){
+            if (window.pageYOffset>90){
+                nav.classList.add("sticky");
+                
+                logo.classList.add("logoSticky");
+
+                title.classList.add("titleSticky");
+                sidebar.classList.add("stickySidebar");
+            }else{
+                nav.classList.remove("sticky");
+                
+                logo.classList.remove("logoSticky");
+
+                title.classList.remove("titleSticky");
+                sidebar.classList.remove("stickySidebar");
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>

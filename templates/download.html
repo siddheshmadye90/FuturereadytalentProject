@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <title>download</title>
+</head>
+
+<body>
+    <div class="wrapper">
+    <div class="header" >
+        <div class="logo" id="myLogo">
+            <img src="{{url_for('static',filename='logo.png')}}" alt="logo" style="width: 140px; margin-top: 50px; margin-left: 80px;">
+        </div>
+        <div class="welcome-text" id="myTitle">
+            <h1 id="myTitle">LINUX EMULATOR</h1>
+            <p id="myTitle">YOUR ON THE LINUX BUDDY</p>
+        </div>
+    </div>
+
+    <div id="myNav">
+    <ul class="nav-area" >
+        <li><a href="{{url_for('home')}}">Comand Information</a></li>
+        <li><a href="{{url_for('terminal')}}">Terminal</a></li>
+        <li><a href="{{url_for('bot')}}">FAQ chatbox</a></li>
+        <li><a href="{{url_for('download')}}">offline version download</a></li>
+        <li><a href="{{url_for('about')}}">About</a></li>
+
+    </ul>
+    </div>
+</div>
+
+    <div class="download">
+        <h2 style="background: brown; width: 100%; text-align: center; margin: auto; padding: 6px;">TO DOWNLOAD THIS CODE <br>
+            for ofline use</h2>
+
+        <div class="btn">
+        <a href="#" class="btn1">Soures of ofline version</a>
+        <br>
+        <a href="#" class="btn2">Docker image of Linux command automation</a>
+        <br>
+        <a href="#" class="btn2">Docker image of website</a>
+        <br>
+        </div>
+
+        <p style="text-align: center; font-size: 17px;"> for linux only <br>
+            (Redhat,Fedora,Centos)</p>
+        <br>
+        <br>
+
+        <div class="guide">
+        <h2>HOW TO INSTALL ?</h2>
+        <h3>method 1 : (manual install)</h3><br>
+        <p>1) Go on github report by clicking on the above <br> "linux automation ofline version" button </p><br>
+        <p>2) copy the code</p><br>
+        <p>3) paste in .py file</p><br>
+        <p>4) Run the code using python file.py <br> (Note: compatible with pytho3) </p><br>
+
+        <h3>method 2 : Using git and Github (preffered)</h3><br>
+        <p>1) Git should be configured/installed on system
+            <br> (Git is pre-installed in most ofe the linux o.s)
+        </p><br>
+        <p>2) Use git clone command to download code file <br> command: git clone www.github.com/pratik2630/cpp</p><br>
+        <p>3) Go inside that folder and run the file using python filename.py</p><br>
+        <p>4) Done!!! your successfully launched: " linux automation menu " </p><br>
+        </div>
+    </div>
+
+
+
+    <script>
+        window.onscroll=function(){myfunction()};
+
+        var logo=document.getElementById("myLogo");
+        var title=document.getElementById("myTitle");
+        var nav=document.getElementById("myNav");
+
+        var sticky=header.offsetTop;
+
+        function myfunction(){
+            if (window.pageYOffset>90){
+                nav.classList.add("sticky");
+                
+                logo.classList.add("logoSticky");
+
+                title.classList.add("titleSticky");
+            }else{
+                nav.classList.remove("sticky");
+                
+                logo.classList.remove("logoSticky");
+
+                title.classList.remove("titleSticky");
+            }
+        }
+    </script>
+</body>
+</html>

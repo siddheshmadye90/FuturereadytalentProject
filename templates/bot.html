@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+        </script>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/bot.css')}}">
+        <title>FAQ ChatBot</title>
+    </head>
+    <body>
+        <div class="wrapper">
+        <div class="header" >
+            <div class="logo" id="myLogo">
+                <img src="{{url_for('static',filename='logo.png')}}" alt="logo" style="width: 140px; margin-top: 50px; margin-left: 80px;">
+            </div>
+            <div class="welcome-text" id="myTitle">
+                <h1 id="myTitle">LINUX EMULATOR</h1>
+                <p id="myTitle">YOUR ON THE LINUX BUDDY</p>
+            </div>
+        </div>
+
+        <div id="myNav">
+            <ul class="nav-area" >
+                <li><a href="{{url_for('home')}}">Comand Information</a></li>
+                <li><a href="{{url_for('terminal')}}">Terminal</a></li>
+                <li><a href="{{url_for('bot')}}">FAQ chatbox</a></li>
+                <li><a href="{{url_for('download')}}">offline version download</a></li>
+                <li><a href="{{url_for('about')}}">About</a></li>
+
+            </ul>
+        </div>
+    </div>
+
+        <div class="chat-bot">
+            <div style=" background-color: darkgrey; width: 30%; padding: 2%; border-style: solid; border-width: 2px; border-radius: 5px; margin-top: -90px;" class="main">
+                <h2>FAQ ChatBot</h2>
+                <div style=" background-color: #f8f1ff; padding: 8px; border-style: solid; border-width: 2px; border-radius: 5px; ">
+                    <div id="chatbox"  >
+                        <p class="botText" style="background-color: #153131; border-radius: 5px; padding: 3%; color: #ffff; margin-right: 25%; margin-top: 8px; margin-bottom: 8px;"   ><span>Hi! Iam your chatBot</span></p>
+                    </div>
+                    <div id= "userInput" >
+                        <input id = "textInput" type="text" name="msg" placeholder="Message" style="height: 25px; width: 235px; margin-right: 10px;">
+                        <input id = "buttonInput" type="submit" value="Send" style="height: 28px; width: 60px; background: dimgrey; border-style: none; border-radius: 3px;">
+                    </div>
+
+                    <script>
+                                window.onscroll=function(){myfunction()};
+
+var logo=document.getElementById("myLogo");
+var title=document.getElementById("myTitle");
+var nav=document.getElementById("myNav");
+var sidebar=document.getElementById("sidebar");
+
+var sticky=header.offsetTop;
+
+function myfunction(){
+    if (window.pageYOffset>90){
+        nav.classList.add("sticky");
+        
+        logo.classList.add("logoSticky");
+
+        title.classList.add("titleSticky");
+        sidebar.classList.add("stickySidebar");
+    }else{
+        nav.classList.remove("sticky");
+        
+        logo.classList.remove("logoSticky");
+
+        title.classList.remove("titleSticky");
+        sidebar.classList.remove("stickySidebar");
+    }
+}
+                    </script>
+
+                    <script>
+
+
+                        function getBotResponse()
+                        {
+                            var rawText = $("#textInput").val();
+                            var userHtml = '<p class = "userText" style="text-align: right; border-radius: 5px; padding: 3%; margin-left: 25%; background-color: #45cb85; color: #ffff;"><span>'+rawText+'</span></p>';
+                            $("#textInput").val("");
+                            $("#chatbox").append(userHtml);
+                            document.getElementById('userInput').scrollIntoView({block:'start',behaviour:'smooth'})
+                            $.get("/get",{msg:rawText}).done(function(data) {
+                                var botHtml ='<p class = "botText" style="background-color: #153131; border-radius: 5px; padding: 3%; color: #ffff; margin-right: 25%; margin-top: 8px; margin-bottom: 8px;"><span>'+data+'</span></p>';
+                            $("#chatbox").append(botHtml);
+                            document.getElementId('userInput').scrollIntoView({block:'start', behaviour:'smooth'})
+
+                            });
+                        }
+                        $("#textInput").keypress(function(e){
+                            if (e.which ==13){
+                            getBotResponse();
+                            }
+                        });
+                        $("#buttonInput").click(function(){
+                        getBotResponse();
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

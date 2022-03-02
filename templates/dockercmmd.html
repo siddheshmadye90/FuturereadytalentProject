@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <title>DOCKER COMMANDS</title>
+</head>
+
+<body>
+    <div class="wrapper">
+    <div class="header" >
+        <div class="logo" id="myLogo">
+            <img src="{{url_for('static',filename='logo.png')}}" alt="logo" style="width: 140px; margin-top: 50px; margin-left: 80px;">
+        </div>
+        <div class="welcome-text" id="myTitle">
+            <h1 id="myTitle">LINUX EMULATOR</h1>
+            <p id="myTitle">YOUR ON THE LINUX BUDDY</p>
+        </div>
+    </div>
+
+    <div id="myNav">
+    <ul class="nav-area" >
+        <li><a href="{{url_for('home')}}">Comand Information</a></li>
+        <li><a href="{{url_for('terminal')}}">Terminal</a></li>
+        <li><a href="{{url_for('bot')}}">FAQ chatbox</a></li>
+        <li><a href="{{url_for('download')}}">offline version download</a></li>
+        <li><a href="{{url_for('about')}}">About</a></li>
+
+    </ul>
+    </div>
+</ul>
+
+<div class="info">
+    
+    <P >*INFORMATION ABOUT DOCKER*
+        <br>
+        <br>
+        Docker is a set of platform as a service products that use OS-level virtualization to deliver software in packages called containers. Containers are isolated from one another and bundle their own software, libraries and configuration files; they can communicate with each other through well-defined channels
+
+    </P>
+    <br>
+    
+    <h1>DOCKER COMMANDS</h1>
+    <br>
+    <ul style="padding: 20px; margin-bottom: 30px;">
+        <li> <B>docker info </B>
+            <p>To check information about docker</p>
+        </li><hr>
+        <li> <B>docker ps  </B>
+            <p>To check running containers</p>
+        </li><hr>
+        <li> <B>docker images </B>
+            <p>To check installed images</p>
+        </li><hr>
+        <li><B>docker pull   &lt;ImageName&gt;:&lt;ImgVersion&gt;</B>
+            <p>  To download image with specific version
+                If you don’t give version it will download latest version by default
+                </p>
+        </li><hr>
+        <li><B>docker run -it&lt;ImageName&gt;</B>
+            <p> To launch new docker container and give you terminal
+                Here i means interactive and t stands for terminal
+                
+                </p>
+        </li><hr>
+        <li><B>docker stop&lt;ContainerNam&gt;</B>
+            <p> To stop running container    </p>
+        </li><hr>
+        <li><B>docker ps -a</B>
+            <p> To check all running and stopped containers
+            </p>
+        </li><hr>
+        <li><B>docker start&lt;ContainerName&gt;</B>
+        <p> To start stopped container  </p>
+        </li><hr>
+        <li><B>docker attach&lt;ContainerName&gt;</B>
+            <p> To use terminal of running container</p>
+            </li><hr>
+    </ul>
+</div>
+</div>
+    <nav class="sidebar" id="sidebar">
+        <!-- <div class="text">Basic Linux commands</div> -->
+        <ul>
+            <li><a href="{{url_for('home')}}">Basic Linux Commands</a></li>
+
+            <li><a href="https://www.thegeekdiary.com/redhat-centos-a-beginners-guide-to-lvm-logical-volume-manager/#:~:text=A%20Logical%20Volume%20is%20the%20conceptual%20equivalent%20of,a%20logical%20volume%20in%20an%20existing%20volume%20group.">LVM commands <br> (Logical Group Volume)</a> </li>
+            <li><a href="{{url_for('dockercmmd')}}">Docker commands</a></li>
+            <li><a href="{{url_for('appachecmmd')}}">Appache Webserver Commands</a></li>
+            <li><a href="https://docs.aws.amazon.com/cli/index.html">AWS Basic Commands</a></li>
+        </ul>
+
+    </nav>
+</div>
+    <script>
+        window.onscroll=function(){myfunction()};
+
+        var logo=document.getElementById("myLogo");
+        var title=document.getElementById("myTitle");
+        var nav=document.getElementById("myNav");
+        var sidebar=document.getElementById("sidebar");
+
+        var sticky=header.offsetTop;
+
+        function myfunction(){
+            if (window.pageYOffset>90){
+                nav.classList.add("sticky");
+                
+                logo.classList.add("logoSticky");
+
+                title.classList.add("titleSticky");
+                sidebar.classList.add("stickySidebar");
+            }else{
+                nav.classList.remove("sticky");
+                
+                logo.classList.remove("logoSticky");
+
+                title.classList.remove("titleSticky");
+                sidebar.classList.remove("stickySidebar");
+            }
+        }
+    </script>
+
+</body>
+</html>

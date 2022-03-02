@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <title>about</title>
+</head>
+
+<body>
+    <div class="wrapper">
+    <div class="header" >
+        <div class="logo" id="myLogo">
+            <img src="{{url_for('static',filename='logo.png')}}" alt="logo" style="width: 140px; margin-top: 50px; margin-left: 80px;">
+        </div>
+        <div class="welcome-text" id="myTitle">
+            <h1 id="myTitle">LINUX EMULATOR</h1>
+            <p id="myTitle">YOUR ON THE LINUX BUDDY</p>
+        </div>
+    </div>
+
+    <div id="myNav">
+    <ul class="nav-area" >
+        <li><a href="{{url_for('home')}}">Comand Information</a></li>
+        <li><a href="{{url_for('terminal')}}">Terminal</a></li>
+        <li><a href="{{url_for('bot')}}">FAQ chatbox</a></li>
+        <li><a href="{{url_for('download')}}">offline version download</a></li>
+        <li><a href="{{url_for('about')}}">About</a></li>
+
+    </ul>
+    </div>
+    </div>
+    <div class="abt">
+        <h1>About</h1>
+        <p>
+            In this world of technology data and security is biggest
+            concern and Linux is considered as one of most secured
+            operating system around the world. Having knowledge of Linux
+            is always great thing. But learning Linux might be difficult
+            sometimes .To solve this issue here's our project Linux
+            emulator.
+        </p>
+        <p>
+            "Linux Emulator web application" project is web based
+            application which can provide service to learn , practice and
+            test Linux commands. In this project you will come to know
+            Linux concepts and Linux environment in user friendly way for
+            practicing Linux concepts. Along with this there is chatbot
+            which gives you easy to help support facility.
+        </p>
+    </div>
+
+    <div class="dev">
+        <h1>Developers</h1>
+    </div>
+
+    <div class="profileCard">
+        
+        <div class="card" id="profile1">
+            <img src="{{url_for('static',filename='sahil.jpg')}}" alt="sahil" style="width:50%; border-radius: 50%; margin-top: 5px;">
+            <h2>Sahil Gaonkar</h2>
+            <p class="title">Student</p>
+            <p>Govt Polytechnic Malvan</p>
+            <a href="https://www.instagram.com/sahil.gaonkar.501/?utm_medium=copy_link"><i class="fa fa-instagram"></i></a>
+            
+            <a href="https://www.linkedin.com/in/sahil-gaonkar-833214216/"><i class="fa fa-linkedin"></i></a>
+            <a href="https://www.facebook.com/sahil.gaonkar.501"><i class="fa fa-facebook"></i></a>
+        </div>
+        <div class="card" id="profile2">
+            <img src="{{url_for('static',filename='pratik.jpg')}}" alt="pratik" style="width:50%; border-radius: 50%; margin-top: 5px;">
+            <h2>Pratik Korgaonkar</h2>
+            <p class="title">Student</p>
+            <p>Govt Polytechnic Malvan</p>
+            <a href="https://www.instagram.com/pratik.korgaonkar/"><i class="fa fa-instagram"></i></a>
+            
+            <a href="https://www.linkedin.com/in/pratikkorgaonkar"><i class="fa fa-linkedin"></i></a>
+            
+        </div>
+        <div class="card" id="profile3">
+            <img src="{{url_for('static',filename='paresh.jpg')}}" alt="baburav" style="width:50%; border-radius: 50%; margin-top: 5px;">
+            <h2>Baburav Mestry</h2>
+            <p class="title">Student</p>
+            <p>Govt Polytechnic Malvan</p>
+            <a href="https://www.instagram.com/mr_paresh127/"><i class="fa fa-instagram"></i></a>
+            <a href="https://twitter.com/PareshMestry2"><i class="fa fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/paresh-mestry-528421215"><i class="fa fa-linkedin"></i></a>
+            <a href="https://www.facebook.com/paresh.mestry.31"><i class="fa fa-facebook"></i></a>
+        </div>
+    </div>
+
+    <script>
+        window.onscroll=function(){myfunction()};
+
+        var logo=document.getElementById("myLogo");
+        var title=document.getElementById("myTitle");
+        var nav=document.getElementById("myNav");
+
+        var sticky=header.offsetTop;
+
+        function myfunction(){
+            if (window.pageYOffset>90){
+                nav.classList.add("sticky");
+                
+                logo.classList.add("logoSticky");
+
+                title.classList.add("titleSticky");
+            }else{
+                nav.classList.remove("sticky");
+                
+                logo.classList.remove("logoSticky");
+
+                title.classList.remove("titleSticky");
+            }
+        }
+    </script>
+</body>
+</html>
